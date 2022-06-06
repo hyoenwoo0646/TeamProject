@@ -27,7 +27,13 @@ public class BackGroundMoving : MonoBehaviour
             speed = 1;
 
         else if (realTime > 10 && realTime <= 30)
-            speed = 10;
+            speed = 1.1f;
+
+        else if (realTime > 30 && realTime <= 60)
+            speed = 1.2f;
+
+        else if (realTime > 60 && realTime <= 90)
+            speed = 1.4f;
 
         offset += Time.deltaTime * speed;
        
