@@ -22,7 +22,7 @@ public class BackGroundMoving : MonoBehaviour
     {
         time += Time.deltaTime;
         realTime = ((int)time % 60);
-        Debug.Log(realTime);
+        //Debug.Log(realTime);
         if (realTime <= 10)
             speed = 1;
 
