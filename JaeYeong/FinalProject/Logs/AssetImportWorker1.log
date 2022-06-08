@@ -1,0 +1,265 @@
+Using pre-set license
+Built from '2021.3/staging' branch; Version is '2021.3.3f1 (af2e63e8f9bd) revision 11480675'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19043) 64bit Core' Language: 'ko' Physical Memory: 16318 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity 2021.3.3f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker1
+-projectPath
+E:/TeamProject/JaeYeong/FinalProject
+-logFile
+Logs/AssetImportWorker1.log
+-srvPort
+5752
+Successfully changed project path to: E:/TeamProject/JaeYeong/FinalProject
+E:/TeamProject/JaeYeong/FinalProject
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Refreshing native plugins compatible for Editor in 98.10 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.3f1 (af2e63e8f9bd)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity 2021.3.3f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path E:/TeamProject/JaeYeong/FinalProject/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1080 (ID=0x1b80)
+    Vendor:   NVIDIA
+    VRAM:     8079 MB
+    Driver:   27.21.14.6677
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity 2021.3.3f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity 2021.3.3f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity 2021.3.3f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56084
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity 2021.3.3f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.009594 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 94.59 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.777 seconds
+Domain Reload Profiling:
+	ReloadAssembly (778ms)
+		BeginReloadAssembly (123ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (516ms)
+			LoadAssemblies (119ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (128ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (27ms)
+			SetupLoadedEditorAssemblies (300ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (9ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (95ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (134ms)
+				ProcessInitializeOnLoadMethodAttributes (60ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.006226 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image E:\TeamProject\JaeYeong\FinalProject\Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image E:\TeamProject\JaeYeong\FinalProject\Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.50 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.173 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1174ms)
+		BeginReloadAssembly (143ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (20ms)
+		EndReloadAssembly (904ms)
+			LoadAssemblies (113ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (288ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (53ms)
+			SetupLoadedEditorAssemblies (424ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (6ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (103ms)
+				ProcessInitializeOnLoadAttributes (268ms)
+				ProcessInitializeOnLoadMethodAttributes (32ms)
+				AfterProcessingInitializeOnLoad (13ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (16ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.10 seconds
+Refreshing native plugins compatible for Editor in 0.75 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3411 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 26 unused Assets / (112.2 KB). Loaded Objects now: 3870.
+Memory consumption went from 119.0 MB to 118.9 MB.
+Total: 3.171100 ms (FindLiveObjects: 0.271500 ms CreateObjectMapping: 0.282800 ms MarkObjects: 2.516400 ms  DeleteObjects: 0.099400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 84872.953024 seconds.
+  path: Assets/space.png
+  artifactKey: Guid(b267c8c67fc4d814da6f532ebacc001b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/space.png using Guid(b267c8c67fc4d814da6f532ebacc001b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '65df75b34e3b4bc28bdd3406561fd381') in 0.246160 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 216.725870 seconds.
+  path: Assets/Free Pixel Space Platform Pack/Spikes/Spike_02.png
+  artifactKey: Guid(dddd89db6df12524186d273282174949) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Pixel Space Platform Pack/Spikes/Spike_02.png using Guid(dddd89db6df12524186d273282174949) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f43fb8f6b87de7b115712cee30a475c') in 0.054883 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/Free Pixel Space Platform Pack/Spikes/Spike_04.png
+  artifactKey: Guid(9a80b48bb9ff266408fd34f946cae49c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Pixel Space Platform Pack/Spikes/Spike_04.png using Guid(9a80b48bb9ff266408fd34f946cae49c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4cff7fc7e7dc85440b00b998518b0150') in 0.048985 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Free Pixel Space Platform Pack/Spikes/Spike_05.png
+  artifactKey: Guid(787eeb44b2cc7a347be0f5bcae610819) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Pixel Space Platform Pack/Spikes/Spike_05.png using Guid(787eeb44b2cc7a347be0f5bcae610819) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fff6b4315d33a86f77985d0b9e65707b') in 0.060750 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.064030 seconds.
+  path: Assets/Free Pixel Space Platform Pack/Portal/PortalOn.png
+  artifactKey: Guid(a250755ac1951bb4fa0ea9b06a3408a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Pixel Space Platform Pack/Portal/PortalOn.png using Guid(a250755ac1951bb4fa0ea9b06a3408a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b58b95cbdf66a04f010d987b73136e17') in 0.040314 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.444223 seconds.
+  path: Assets/Free Pixel Space Platform Pack/Platforms/Platform_02.png
+  artifactKey: Guid(47957807853b0834a856ac1590c64791) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Pixel Space Platform Pack/Platforms/Platform_02.png using Guid(47957807853b0834a856ac1590c64791) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e63151b3c48bf90d7c9c7d5d4e7d0a4') in 0.083421 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.276241 seconds.
+  path: Assets/Free Pixel Space Platform Pack/Plants/GrassDown_02.png
+  artifactKey: Guid(058550cb77f069e4396c1ed3b73b21d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Pixel Space Platform Pack/Plants/GrassDown_02.png using Guid(058550cb77f069e4396c1ed3b73b21d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0fe2e7be0ae6a758f603992541270202') in 0.036427 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Free Pixel Space Platform Pack/Plants/GreenBush.png
+  artifactKey: Guid(da20a98f295c37f45a640ed110f4cc95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Pixel Space Platform Pack/Plants/GreenBush.png using Guid(da20a98f295c37f45a640ed110f4cc95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3029c4cfd39d970b8f0eec9e6569c38f') in 0.035522 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Free Pixel Space Platform Pack/Plants/GreenTree_01.png
+  artifactKey: Guid(1fd6c0bea09fddd499980688c890931a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Pixel Space Platform Pack/Plants/GreenTree_01.png using Guid(1fd6c0bea09fddd499980688c890931a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '626e0fd9c875b2f306c89d35439e2da2') in 0.038162 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Free Pixel Space Platform Pack/Plants/VioletTree_02.png
+  artifactKey: Guid(f54556ea2c55aef46af457e96846a98c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Pixel Space Platform Pack/Plants/VioletTree_02.png using Guid(f54556ea2c55aef46af457e96846a98c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dde64cc983d1e06d3d57f5309b5f7b78') in 0.047785 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000096 seconds.
+  path: Assets/Free Pixel Space Platform Pack/Plants/GrassUp.png
+  artifactKey: Guid(c33597f3b548250438320bd772ebb30e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Pixel Space Platform Pack/Plants/GrassUp.png using Guid(c33597f3b548250438320bd772ebb30e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6a3e0233fd36223a01aa0beb8dda9a4') in 0.039973 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000058 seconds.
+  path: Assets/Free Pixel Space Platform Pack/Plants/GreenTree_03.png
+  artifactKey: Guid(6b7a70471676896428a5f414f73c2134) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Pixel Space Platform Pack/Plants/GreenTree_03.png using Guid(6b7a70471676896428a5f414f73c2134) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '58e749902e86d28a5eae10c396254427') in 0.081334 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.066703 seconds.
+  path: Assets/Free Pixel Space Platform Pack/Ladders/Ladder_02.png
+  artifactKey: Guid(9a23dc9da5aeadf4384f2ef234210a57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Pixel Space Platform Pack/Ladders/Ladder_02.png using Guid(9a23dc9da5aeadf4384f2ef234210a57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac16dbd36708ef6f1182c8543f250344') in 0.037615 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.330408 seconds.
+  path: Assets/Free Pixel Space Platform Pack/Crystals/Crystal_02.png
+  artifactKey: Guid(7a4e2a16a00a6d645b159d4890bfc3a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Pixel Space Platform Pack/Crystals/Crystal_02.png using Guid(7a4e2a16a00a6d645b159d4890bfc3a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82212de203721f4963c66b0775bfb6ac') in 0.067225 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.379308 seconds.
+  path: Assets/Free Pixel Space Platform Pack/Boxes/Box_02.png
+  artifactKey: Guid(3893185237368e74eab199e2a1a99651) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Pixel Space Platform Pack/Boxes/Box_02.png using Guid(3893185237368e74eab199e2a1a99651) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33f1dabbd86c87503c3396996c8504de') in 0.030117 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.730932 seconds.
+  path: Assets/Free Pixel Space Platform Pack/Astronaut/AstroLadder.png
+  artifactKey: Guid(9e32e8a78482a0142b7d8c36040d3ad5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Pixel Space Platform Pack/Astronaut/AstroLadder.png using Guid(9e32e8a78482a0142b7d8c36040d3ad5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '70c867b3957e2e42e4bf28e12352acda') in 0.035099 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Free Pixel Space Platform Pack/Astronaut/AstroWalk.png
+  artifactKey: Guid(dfc7090c56f3626418196653e1eb610d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Pixel Space Platform Pack/Astronaut/AstroWalk.png using Guid(dfc7090c56f3626418196653e1eb610d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '92038c2c8ff94be4ccd7bea65ab76421') in 0.065280 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
