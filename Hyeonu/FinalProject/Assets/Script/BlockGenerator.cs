@@ -6,7 +6,7 @@ public class BlockGenerator : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public GameObject Block;
+    public GameObject[] Block;
 
     private GameObject blockPrefab;
 
@@ -14,6 +14,7 @@ public class BlockGenerator : MonoBehaviour
 
     private float randomX;
 
+    private int blockIndex;
 
     void Start()
     {
@@ -25,14 +26,14 @@ public class BlockGenerator : MonoBehaviour
     {
         randomX = Random.Range(-4.0f, 4.0f);
         Debug.Log(randomX);
-
     }
 
     void BlockGen()
     {
         spawnPos = new Vector3(randomX , 7.7f, -7.619018f);
-            
-        blockPrefab = Instantiate(Block, spawnPos, Quaternion.identity);
+
+        blockIndex = Random.Range(0, 5);
+        blockPrefab = Instantiate(Block[blockIndex], spawnPos, Quaternion.identity);
     }
 
 }
