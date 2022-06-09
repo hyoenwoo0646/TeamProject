@@ -24,16 +24,16 @@ public class BackGroundMoving : MonoBehaviour
         realTime = ((int)time % 60);
         //Debug.Log(realTime);
         if (realTime <= 10)
-            speed = 0.7f;
+            speed = 1;
 
         else if (realTime > 10 && realTime <= 30)
-            speed = 0.8f;
+            speed = 1.1f;
 
         else if (realTime > 30 && realTime <= 60)
-            speed = 1.0f;
+            speed = 1.2f;
 
         else if (realTime > 60 && realTime <= 90)
-            speed = 1.1f;
+            speed = 1.4f;
 
         offset += Time.deltaTime * speed;
        

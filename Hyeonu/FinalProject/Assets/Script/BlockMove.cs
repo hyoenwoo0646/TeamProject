@@ -6,7 +6,7 @@ public class BlockMove : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    private float speed = 4.0f;
+    private float speed = 2.0f;
     void Start()
     {
         
