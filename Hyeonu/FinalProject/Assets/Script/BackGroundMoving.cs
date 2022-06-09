@@ -5,12 +5,12 @@ using UnityEngine;
 public class BackGroundMoving : MonoBehaviour
 {
     // Start is called before the first frame update
+    GameManager gameManager;
 
     private MeshRenderer render;
     private float offset;
     public float speed;
     private float time;
-    private float realTime;
 
     void Start()
     {
@@ -20,19 +20,19 @@ public class BackGroundMoving : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        time += Time.deltaTime;
-        realTime = ((int)time % 60);
-        //Debug.Log(realTime);
-        if (realTime <= 10)
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        time = gameManager.gTime;
+
+        if (time <= 10)
             speed = 0.7f;
 
-        else if (realTime > 10 && realTime <= 30)
+        else if (time > 10 && time <= 30)
             speed = 0.8f;
 
-        else if (realTime > 30 && realTime <= 60)
+        else if (time > 30 && time <= 60)
             speed = 1.0f;
 
-        else if (realTime > 60 && realTime <= 90)
+        else if (time > 60 && time <= 90)
             speed = 1.1f;
 
         offset += Time.deltaTime * speed;

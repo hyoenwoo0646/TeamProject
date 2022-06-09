@@ -25,7 +25,7 @@ public class BlockGenerator : MonoBehaviour
     void Update()
     {
         randomX = Random.Range(-4.0f, 4.0f);
-        Debug.Log(randomX);
+       // Debug.Log(randomX);
     }
 
     void BlockGen()
