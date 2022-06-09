@@ -30,7 +30,7 @@ public class BlockGenerator : MonoBehaviour
 
     void BlockGen()
     {
-        spawnPos = new Vector3(randomX , 7.7f, -7.619018f);
+        spawnPos = new Vector3(randomX , 7.7f, -8.0f);
 
         blockIndex = Random.Range(0, 5);
         blockPrefab = Instantiate(Block[blockIndex], spawnPos, Quaternion.identity);
