@@ -22,7 +22,7 @@ public class BlockGenerator : MonoBehaviour
 
     void Start()
     {
-        InvokeRepeating("BlockGen", 2, 1);
+        InvokeRepeating("BlockGen", 4, 1);
     }
 
     // Update is called once per frame
