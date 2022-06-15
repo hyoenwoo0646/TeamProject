@@ -38,6 +38,5 @@ public class BlockMove : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
     }
 }
