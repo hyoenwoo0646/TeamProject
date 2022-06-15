@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 07ffd816ab0fda74fb663bc6803d0871
+guid: c3e469d67b51fec408b8d83b2b04767f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -118,8 +118,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3bb9bbf1c07b9be49b7d6969c43c013f
-      internalID: -2147407902
+      spriteID: 9cd79a06b62ee7540aa0d04317d05116
+      internalID: -1486757409
       vertices: []
       indices: 
       edges: []
@@ -139,8 +139,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 249b06ffc288cbe4bb24e583d1e58043
-      internalID: 1194582044
+      spriteID: ba1780df591022148ae238882700565f
+      internalID: 1660871520
       vertices: []
       indices: 
       edges: []
@@ -160,8 +160,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f7809c2211fb9f47ab4b42ccbf47759
-      internalID: 138031168
+      spriteID: 6cacf50ef11990b4e8d808db05acf20d
+      internalID: -1553513369
       vertices: []
       indices: 
       edges: []
@@ -177,9 +177,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      AstroJumpleft_0: -2147407902
-      AstroJumpleft_2: 138031168
-      AstroJumpleft_1: 1194582044
+      AstroJumpleft_0: -1486757409
+      AstroJumpleft_2: -1553513369
+      AstroJumpleft_1: 1660871520
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

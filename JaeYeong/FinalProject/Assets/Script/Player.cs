@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -9,11 +10,18 @@ public class Player : MonoBehaviour
     public bool isTouchBottom;
     public bool isTouchLeft;
     public bool isTouchRight;
-    Animator anim;
+    public bool isRespawnTime;
+    public Slider slider;
+    public float Damage;
+    public bool isHit;
 
+    public GameManager manager;
+    Animator anim;
+    SpriteRenderer spriteRenderer;
     void Awake()
     {
         anim = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -30,7 +38,7 @@ public class Player : MonoBehaviour
         transform.position = curPos + nextPos;
 
 
-        if(Input.GetButtonDown("Horizontal") || Input.GetButtonUp("Horizontal"))
+        if (Input.GetButtonDown("Horizontal") || Input.GetButtonUp("Horizontal"))
         {
             anim.SetInteger("Input", (int)h);
         }
@@ -39,7 +47,7 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if(collision.gameObject.tag == "Border")
+        if (collision.gameObject.tag == "Border")
         {
             Debug.Log(collision.gameObject.tag);
             switch (collision.gameObject.name)
@@ -61,7 +69,31 @@ public class Player : MonoBehaviour
 
             }
         }
+
+        else if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "EnemyBullet") //에너미는 적, 에너미불렛은 총알
+        {
+            if (isRespawnTime) //무적 시간이면 적에게 맞지 않음
+                return;
+
+
+            //if (isHit) //이미 맞은상태에서 바로 맞으면 적에게 맞지 않음,중복 시 라이프가 한번에 없어지기 때문
+            //    return;
+
+            manager.RespawnPlayer();
+            gameObject.SetActive(false);
+            Debug.Log(collision.gameObject.tag);
+
+            slider.value -= Damage;
+
+           
+
+            isHit = true;
+
+        }
     }
+
+
+
 
     private void OnTriggerExit(Collider collision)
     {
@@ -85,4 +117,35 @@ public class Player : MonoBehaviour
             }
         }
     }
+
+
+
+
+
+    void OnEnable()
+    {
+        Unbeatable();
+
+        Invoke("Unbeatable", 3);
+
+    }
+
+    void Unbeatable()
+    {
+        isRespawnTime = !isRespawnTime;
+
+        if (isRespawnTime) //무적 타임 이펙트 (투명)
+        {
+            spriteRenderer.color = new Color(1, 1, 1, 0.5f);
+
+
+        }
+        else
+        {
+            spriteRenderer.color = new Color(1, 1, 1, 1); //무적 타임 종료(원래대로)
+
+
+        }
+    }
+
 }

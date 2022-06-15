@@ -7,8 +7,9 @@ public class BackGroundManager : MonoBehaviour
     // Start is called before the first frame update
     public GameObject Quad1;
     public GameObject Quad2;
+
+    GameManager gameManager;
     private float time;
-    private float realTime;
 
     void Start()
     {
@@ -18,10 +19,11 @@ public class BackGroundManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        time += Time.deltaTime;
-        realTime = ((int)time % 60);
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        time = gameManager.gTime;
+ 
 
-        if (realTime > 30)
+        if (time > 30)
         {
             Quad1.SetActive(false);
             Quad2.SetActive(true);
