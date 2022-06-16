@@ -10,6 +10,8 @@ public class BlockGenerator : MonoBehaviour
 
     public GameObject Block1;
     public GameObject Block2;
+    public GameObject Block3;
+
 
     private GameObject blockPrefab;
 
@@ -65,7 +67,7 @@ public class BlockGenerator : MonoBehaviour
             blockPrefab = Instantiate(Block1, spawnPos3, Quaternion.identity);
         }
         
-        else if(time > 60)
+        else if(time > 60 && time <= 120)
         {
             blockPrefab = Instantiate(Block2, spawnPos1, Quaternion.identity);
             blockPrefab = Instantiate(Block2, spawnPos2, Quaternion.identity);
@@ -74,6 +76,12 @@ public class BlockGenerator : MonoBehaviour
 
         }
 
+        else if(time > 120)
+        {
+            blockPrefab = Instantiate(Block3, spawnPos1, Quaternion.identity);
+            blockPrefab = Instantiate(Block3, spawnPos2, Quaternion.identity);
+            blockPrefab = Instantiate(Block3, spawnPos3, Quaternion.identity);
+        }
     }
 
 }

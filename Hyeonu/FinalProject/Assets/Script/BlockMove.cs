@@ -24,13 +24,19 @@ public class BlockMove : MonoBehaviour
             speed = 4.0f;
 
         else if (time > 10 && time <= 30)
-            speed = 4.2f;
+            speed = 5.0f;
 
         else if (time > 30 && time <= 60)
-            speed = 4.4f;
+            speed = 6.0f;
 
         else if (time > 60 && time <= 90)
-            speed = 4.6f;
+            speed = 7.0f;
+
+        else if (time > 90 && time <= 120)
+            speed = 8.5f;
+
+        else if (time > 120)
+            speed = 10.0f;
 
         gameObject.transform.Translate(0, -(Time.deltaTime * speed), 0);
 

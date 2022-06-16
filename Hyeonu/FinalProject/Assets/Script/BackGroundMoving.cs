@@ -24,16 +24,20 @@ public class BackGroundMoving : MonoBehaviour
         time = gameManager.gTime;
 
         if (time <= 10)
-            speed = 0.7f;
+            speed = 0.4f;
 
         else if (time > 10 && time <= 30)
-            speed = 0.8f;
+            speed = 0.5f;
 
         else if (time > 30 && time <= 60)
-            speed = 1.0f;
+            speed = 0.6f;
 
         else if (time > 60 && time <= 90)
-            speed = 1.1f;
+            speed = 0.7f;
+
+        else if (time > 90)
+            speed = 0.8f;
+
 
         offset += Time.deltaTime * speed;
        
