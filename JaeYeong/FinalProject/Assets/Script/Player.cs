@@ -11,20 +11,65 @@ public class Player : MonoBehaviour
     public bool isTouchLeft;
     public bool isTouchRight;
     public bool isRespawnTime;
-    public Slider slider;
-    public float Damage;
+    
+    
     public bool isHit;
+    public bool Usedgun;
+    public GameObject bulletobj;
+
+    private float limittime;
+
+    public float maxShotDelay;
+    public float curShotDelay;
 
     public GameManager manager;
     Animator anim;
     SpriteRenderer spriteRenderer;
+    GameManager gameManager;
     void Awake()
     {
         anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        limittime = 5f;
+
     }
 
     void Update()
+    {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        float time = gameManager.gTime;
+
+        if (time <= 10)
+            speed = 4.0f;
+
+        else if (time > 10 && time <= 30)
+            speed = 4.2f;
+
+        else if (time > 30 && time <= 60)
+            speed = 4.4f;
+
+        else if (time > 60 && time <= 90)
+            speed = 4.6f;
+
+        Move();
+
+        if (Usedgun == true)
+        {
+            limittime -= Time.deltaTime;
+            Fire();
+            
+        }
+
+        if (limittime < 0f)
+        {
+            Usedgun = false;
+            limittime = 5f;
+        }
+
+        Reload();
+    }
+
+    void Move()
     {
         float h = Input.GetAxisRaw("Horizontal");
         if ((isTouchRight && h == 1) || (isTouchLeft && h == -1))
@@ -44,7 +89,32 @@ public class Player : MonoBehaviour
         }
     }
 
+    void Fire()
+    {
+        if (!Input.GetButton("Fire1"))
+        {
+            return;
+        }
 
+        if (curShotDelay < maxShotDelay)
+            return;
+
+       
+
+
+        GameObject bullet = Instantiate(bulletobj, transform.position, transform.rotation);
+        Rigidbody rigid = bullet.GetComponent<Rigidbody>();
+        rigid.AddForce(Vector2.up * 10, ForceMode.Impulse);
+
+        
+
+        curShotDelay = 0;
+    }
+    void Reload()
+    {
+        curShotDelay += Time.deltaTime;
+        
+    }
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag == "Border")
@@ -83,13 +153,18 @@ public class Player : MonoBehaviour
             gameObject.SetActive(false);
             Debug.Log(collision.gameObject.tag);
 
-            slider.value -= Damage;
+           
 
            
 
             isHit = true;
 
         }
+
+        else if (collision.gameObject.tag == "Item")
+        {
+            Usedgun = true;
+        }    
     }
 
 

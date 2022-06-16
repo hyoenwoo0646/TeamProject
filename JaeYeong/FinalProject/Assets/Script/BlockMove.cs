@@ -34,7 +34,20 @@ public class BlockMove : MonoBehaviour
 
         gameObject.transform.Translate(0, -(Time.deltaTime * speed), 0);
 
-        if(gameObject.transform.position.y <= -8.0f)
+        //if(gameObject.transform.position.y <= -8.0f)
+        //{
+        //    Destroy(gameObject);
+        //}
+
+    }
+
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.tag == "BorderBullet")
+        {
+            Destroy(gameObject);
+        }
+        if (collision.gameObject.tag == "PlayerBullet")
         {
             Destroy(gameObject);
         }

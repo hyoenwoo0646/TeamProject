@@ -7,6 +7,9 @@ TagManager:
   - block
   - Border
   - Enemy
+  - BorderBullet
+  - PlayerBullet
+  - Item
   layers:
   - Default
   - TransparentFX

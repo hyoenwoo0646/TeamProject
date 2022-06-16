@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
 
     public void RespawnPlayer()
     {
-        Invoke("RespawnPlayerExe", 2f);
+        Invoke("RespawnPlayerExe", 0.5f);
     }
 
     void RespawnPlayerExe()
