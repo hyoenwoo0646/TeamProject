@@ -32,6 +32,9 @@ public class ItemMove : MonoBehaviour
         else if (time > 60 && time <= 90)
             speed = 5.6f;
 
+        else if (time >= 90)
+            speed = 5.6f;
+
         gameObject.transform.Translate(0, -(Time.deltaTime * speed), 0);
 
         //if(gameObject.transform.position.y <= -8.0f)

@@ -6,7 +6,7 @@ public class ItemGenerator : MonoBehaviour
 {
     // Start is called before the first frame update
     GameManager gameManager;
-    private float time;
+    public float time;
 
     public GameObject Block;
 

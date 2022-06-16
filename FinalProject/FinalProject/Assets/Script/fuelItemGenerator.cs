@@ -6,7 +6,7 @@ public class fuelItemGenerator : MonoBehaviour
 {
     // Start is called before the first frame update
     GameManager gameManager;
-    private float time;
+    public float time;
 
     public GameObject Block;
 
@@ -41,28 +41,18 @@ public class fuelItemGenerator : MonoBehaviour
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         time = gameManager.gTime;
 
-        spawnPos1 = new Vector3(randomX1 , 7.7f, -8.0f);
+        spawnPos1 = new Vector3(randomX1, 7.7f, -8.0f);
         spawnPos2 = new Vector3(randomX2, 7.7f, -8.0f);
         spawnPos3 = new Vector3(randomX3, 7.7f, -8.0f);
 
-        if (time <= 60)
-        {
-            blockPrefab = Instantiate(Block, spawnPos1, Quaternion.identity);
+        
+        blockPrefab = Instantiate(Block, spawnPos1, Quaternion.identity);
             
-        }
+        
 
-        else if (time > 60 && time <= 120)
-        {
-            blockPrefab = Instantiate(Block, spawnPos1, Quaternion.identity);
-            
-
-        }
-
-        else if (time > 120)
-        {
-            blockPrefab = Instantiate(Block, spawnPos1, Quaternion.identity);
-          
-        }
+    
+      
+      
 
        
        
