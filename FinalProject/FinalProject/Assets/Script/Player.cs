@@ -12,7 +12,6 @@ public class Player : MonoBehaviour
     public bool isTouchRight;
     public bool isRespawnTime;
     
-    
     public bool isHit;
     public bool Usedgun;
     public GameObject bulletobj;
@@ -27,12 +26,12 @@ public class Player : MonoBehaviour
     Animator anim;
     SpriteRenderer spriteRenderer;
     GameManager gameManager;
+
     void Awake()
     {
         anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         limittime = 5f;
-
     }
 
     void Update()
@@ -58,7 +57,6 @@ public class Player : MonoBehaviour
         {
             limittime -= Time.deltaTime;
             Fire();
-            
         }
 
         if (limittime < 0f)
@@ -83,7 +81,6 @@ public class Player : MonoBehaviour
 
         transform.position = curPos + nextPos;
 
-
         if (Input.GetButtonDown("Horizontal") || Input.GetButtonUp("Horizontal"))
         {
             anim.SetInteger("Input", (int)h);
@@ -100,22 +97,18 @@ public class Player : MonoBehaviour
         if (curShotDelay < maxShotDelay)
             return;
 
-       
-
-
         GameObject bullet = Instantiate(bulletobj, transform.position, transform.rotation);
         Rigidbody rigid = bullet.GetComponent<Rigidbody>();
         rigid.AddForce(Vector2.up * 10, ForceMode.Impulse);
 
-        
-
         curShotDelay = 0;
     }
+
     void Reload()
     {
         curShotDelay += Time.deltaTime;
-        
     }
+
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag == "Border")
@@ -141,25 +134,19 @@ public class Player : MonoBehaviour
             }
         }
 
-        else if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "EnemyBullet") //¿¡³Ê¹Ì´Â Àû, ¿¡³Ê¹ÌºÒ·¿Àº ÃÑ¾Ë
+        else if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "EnemyBullet") //ï¿½ï¿½ï¿½Ê¹Ì´ï¿½ ï¿½ï¿½, ï¿½ï¿½ï¿½Ê¹ÌºÒ·ï¿½ï¿½ï¿½ ï¿½Ñ¾ï¿½
         {
-            if (isRespawnTime) //¹«Àû ½Ã°£ÀÌ¸é Àû¿¡°Ô ¸ÂÁö ¾ÊÀ½
+            if (isRespawnTime) //ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
                 return;
 
-
-            //if (isHit) //ÀÌ¹Ì ¸ÂÀº»óÅÂ¿¡¼­ ¹Ù·Î ¸ÂÀ¸¸é Àû¿¡°Ô ¸ÂÁö ¾ÊÀ½,Áßº¹ ½Ã ¶óÀÌÇÁ°¡ ÇÑ¹ø¿¡ ¾ø¾îÁö±â ¶§¹®
+            //if (isHit) //ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¿ï¿½ï¿½ï¿½ ï¿½Ù·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½,ï¿½ßºï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             //    return;
 
             manager.RespawnPlayer();
             gameObject.SetActive(false);
             Debug.Log(collision.gameObject.tag);
 
-           
-
-           
-
             isHit = true;
-
         }
 
         else if (collision.gameObject.tag == "Item")
@@ -167,9 +154,6 @@ public class Player : MonoBehaviour
             Usedgun = true;
         }    
     }
-
-
-
 
     private void OnTriggerExit(Collider collision)
     {
@@ -189,39 +173,28 @@ public class Player : MonoBehaviour
                 case "Right":
                     isTouchRight = false;
                     break;
-
             }
         }
     }
-
-
-
-
 
     void OnEnable()
     {
         Unbeatable();
 
         Invoke("Unbeatable", 3);
-
     }
 
     void Unbeatable()
     {
         isRespawnTime = !isRespawnTime;
 
-        if (isRespawnTime) //¹«Àû Å¸ÀÓ ÀÌÆåÆ® (Åõ¸í)
+        if (isRespawnTime) //ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® (ï¿½ï¿½ï¿½ï¿½)
         {
             spriteRenderer.color = new Color(1, 1, 1, 0.5f);
-
-
         }
         else
         {
-            spriteRenderer.color = new Color(1, 1, 1, 1); //¹«Àû Å¸ÀÓ Á¾·á(¿ø·¡´ë·Î)
-
-
+            spriteRenderer.color = new Color(1, 1, 1, 1); //ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
         }
     }
-
 }
