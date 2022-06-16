@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BackGroundManager : MonoBehaviour
 {
-    // Start is called before the first frame update
     public GameObject Quad1;
     public GameObject Quad2;
     public GameObject Quad3;
@@ -17,7 +16,6 @@ public class BackGroundManager : MonoBehaviour
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
