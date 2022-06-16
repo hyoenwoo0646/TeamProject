@@ -9,9 +9,9 @@ public class test : MonoBehaviour
     public Slider hPBar;
     public float maxHP = 0.0f;
     private float minusHp = 0.0f;
-    private float time = 0.0f;          // ½Ã°£ º¯¼ö 
-    public Text hpText;
-    public Text timeText;
+    //private float time = 0.0f;          // ï¿½Ã°ï¿½ ï¿½ï¿½ï¿½ï¿½ 
+    //public Text hpText;
+    //public Text timeText;
     public float Damage;
     public float Healing;
 
@@ -31,7 +31,7 @@ public class test : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "EnemyBullet") //¿¡³Ê¹Ì´Â Àû, ¿¡³Ê¹ÌºÒ·¿Àº ÃÑ¾Ë
+        if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "EnemyBullet") //ï¿½ï¿½ï¿½Ê¹Ì´ï¿½ ï¿½ï¿½, ï¿½ï¿½ï¿½Ê¹ÌºÒ·ï¿½ï¿½ï¿½ ï¿½Ñ¾ï¿½
         {
             hPBar.value -= Damage;
         }

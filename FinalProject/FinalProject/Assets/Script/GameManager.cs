@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -69,5 +70,25 @@ public class GameManager : MonoBehaviour
     {
         player.transform.position = new Vector3(0.0f, -6.02f, -7.7f);
         player.SetActive(true);
+    }
+
+    public void scene_begin()
+    {
+        
+    }
+    
+    public void scene_restart()
+    {
+        stopGame();
+        SceneManager.LoadScene("Main");
+    }
+    
+    public void scene_quit()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
     }
 }
