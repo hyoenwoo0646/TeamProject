@@ -22,7 +22,6 @@ public class test : MonoBehaviour
         minusHp = 1 / maxHP;
     }
 
-
     void Update()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
@@ -31,8 +30,8 @@ public class test : MonoBehaviour
         hPBar.value -= minusHp * Time.deltaTime;
         if(hPBar.value <= 0)
         {
-            //gameManager.stopGame();
-            gameManager.gameOver();
+            gameManager.endGame();
+            //gameManager.gameOver();
         }
     }
 

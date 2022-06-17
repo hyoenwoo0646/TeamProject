@@ -57,6 +57,7 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0;
         //isPlaying = false;
+        gameOver();
     }
 
     public void gameOver() //게임(한 판)이 온전히 종료
