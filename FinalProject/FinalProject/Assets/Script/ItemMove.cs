@@ -50,10 +50,7 @@ public class ItemMove : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        if (collision.gameObject.tag == "PlayerBullet")
-        {
-            Destroy(gameObject);
-        }
+       
         if (collision.gameObject.tag == "Player")
         {
             Destroy(gameObject);

@@ -23,6 +23,12 @@ public class Player : MonoBehaviour
 
     public GameManager manager;
 
+    public Slider hPBar;
+    public float maxHP = 0.0f;
+    private float minusHp = 0.0f;
+    public float Damage;
+    public float Healing;
+
     Animator anim;
     SpriteRenderer spriteRenderer;
     GameManager gameManager;
@@ -32,6 +38,11 @@ public class Player : MonoBehaviour
         anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         limittime = 5f;
+    }
+
+    void Start()
+    {
+        minusHp = 1 / maxHP;
     }
 
     void Update()
@@ -66,6 +77,13 @@ public class Player : MonoBehaviour
         }
 
         Reload();
+
+        hPBar.value -= minusHp * Time.deltaTime;
+        if (hPBar.value <= 0)
+        {
+            //gameManager.stopGame();
+            gameManager.gameOver();
+        }
     }
 
     void Move()
@@ -134,24 +152,18 @@ public class Player : MonoBehaviour
             }
         }
 
-        else if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "EnemyBullet") //���ʹ̴� ��, ���ʹ̺ҷ��� �Ѿ�
+        else if (collision.gameObject.tag == "Enemy") //���ʹ̴� ��, ���ʹ̺ҷ��� �Ѿ�
         {
-            if (isRespawnTime) //���� �ð��̸� ������ ���� ����
-                return;
-
-            //if (isHit) //�̹� �������¿��� �ٷ� ������ ������ ���� ����,�ߺ� �� �������� �ѹ��� �������� ����
-            //    return;
-
-            manager.RespawnPlayer();
-            gameObject.SetActive(false);
-            Debug.Log(collision.gameObject.tag);
-
-            isHit = true;
+     
+            OnDamaged();
+            
+            
         }
 
         else if (collision.gameObject.tag == "Item")
         {
             Usedgun = true;
+            hPBar.value += Healing;
         }    
     }
 
@@ -177,24 +189,23 @@ public class Player : MonoBehaviour
         }
     }
 
-    void OnEnable()
-    {
-        Unbeatable();
+    
 
-        Invoke("Unbeatable", 3);
+
+    void OnDamaged()
+    {
+        gameObject.layer = 7;
+        hPBar.value -= Damage;
+        spriteRenderer.color = new Color(1, 1, 1, 0.5f);
+
+
+        Invoke("OnDamagedoff", 3);
     }
-
-    void Unbeatable()
+    void OnDamagedoff()
     {
-        isRespawnTime = !isRespawnTime;
 
-        if (isRespawnTime) //���� Ÿ�� ����Ʈ (����)
-        {
-            spriteRenderer.color = new Color(1, 1, 1, 0.5f);
-        }
-        else
-        {
-            spriteRenderer.color = new Color(1, 1, 1, 1); //���� Ÿ�� ����(�������)
-        }
+        spriteRenderer.color = new Color(1, 1, 1, 1); //���� Ÿ�� ����(�������)
+        gameObject.layer = 8;
+
     }
 }
