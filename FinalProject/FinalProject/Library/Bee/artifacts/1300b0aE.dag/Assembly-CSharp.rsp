@@ -357,6 +357,7 @@
 "Assets/Script/BlockGenerator.cs"
 "Assets/Script/BlockMove.cs"
 "Assets/Script/Bullet.cs"
+"Assets/Script/CameraSet.cs"
 "Assets/Script/fuelItemGenerator.cs"
 "Assets/Script/GameManager.cs"
 "Assets/Script/ItemGenerator.cs"
