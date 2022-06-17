@@ -11,7 +11,11 @@ public class Player : MonoBehaviour
     public bool isTouchLeft;
     public bool isTouchRight;
     public bool isRespawnTime;
-    
+    public bool LeftMove = false;
+    public bool RightMove = false;
+    Vector3 moveVelocity = Vector3.zero;
+ 
+
     public bool isHit;
     public bool Usedgun;
     public GameObject bulletobj;
@@ -51,16 +55,16 @@ public class Player : MonoBehaviour
         float time = gameManager.gTime;
 
         if (time <= 10)
-            speed = 4.0f;
+            speed = 15.0f;
 
         else if (time > 10 && time <= 30)
-            speed = 4.2f;
+            speed = 16.0f;
 
         else if (time > 30 && time <= 60)
-            speed = 4.4f;
+            speed = 17.0f;
 
         else if (time > 60 && time <= 90)
-            speed = 4.6f;
+            speed = 18.0f;
 
         Move();
 
@@ -87,21 +91,38 @@ public class Player : MonoBehaviour
 
     void Move()
     {
-        float h = Input.GetAxisRaw("Horizontal");
-        if ((isTouchRight && h == 1) || (isTouchLeft && h == -1))
-            h = 0;
-        float v = Input.GetAxisRaw("Vertical");
-        if ((isTouchTop && v == 1) || (isTouchBottom && v == -1))
-            v = 0;
-        Vector3 curPos = transform.position;
-        Vector3 nextPos = new Vector3(h, 0, 0) * speed * Time.deltaTime;
-
-        transform.position = curPos + nextPos;
-
-        if (Input.GetButtonDown("Horizontal") || Input.GetButtonUp("Horizontal"))
+    
+        if(LeftMove)
         {
-            anim.SetInteger("Input", (int)h);
+            anim.SetBool("Direction",false);
+            moveVelocity = new Vector3(-0.10f, 0, 0);
+            transform.position += moveVelocity * speed * Time.deltaTime;
+            
         }
+
+        if (RightMove)
+        {
+            anim.SetBool("Direction", true);
+            moveVelocity = new Vector3(+0.10f, 0, 0);
+            transform.position += moveVelocity * speed * Time.deltaTime;
+
+        }
+
+        //float h = Input.GetAxisRaw("Horizontal");
+        //if ((isTouchRight && h == 1) || (isTouchLeft && h == -1))
+        //    h = 0;
+        //float v = Input.GetAxisRaw("Vertical");
+        //if ((isTouchTop && v == 1) || (isTouchBottom && v == -1))
+        //    v = 0;
+        //Vector3 curPos = transform.position;
+        //Vector3 nextPos = new Vector3(h, 0, 0) * speed * Time.deltaTime;
+
+        //transform.position = curPos + nextPos;
+
+        //if (Input.GetButtonDown("Horizontal") || Input.GetButtonUp("Horizontal"))
+        //{
+        //    anim.SetInteger("Input", (int)h);
+        //}
     }
 
     void Fire()
@@ -159,8 +180,13 @@ public class Player : MonoBehaviour
         else if (collision.gameObject.tag == "Item")
         {
             Usedgun = true;
+  
+        }
+        else if (collision.gameObject.tag == "fuel")
+        {
+            
             hPBar.value += Healing;
-        }    
+        }
     }
 
     private void OnTriggerExit(Collider collision)
