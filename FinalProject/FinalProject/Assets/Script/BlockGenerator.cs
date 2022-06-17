@@ -81,6 +81,8 @@ public class BlockGenerator : MonoBehaviour
             blockPrefab = Instantiate(Block3, spawnPos1, Quaternion.identity);
             blockPrefab = Instantiate(Block3, spawnPos2, Quaternion.identity);
             blockPrefab = Instantiate(Block3, spawnPos3, Quaternion.identity);
+            blockPrefab = Instantiate(Block3, spawnPos4, Quaternion.identity);
+
         }
     }
 

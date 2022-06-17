@@ -319,6 +319,7 @@
 "Assets/Script/moveTouch.cs"
 "Assets/Script/Player.cs"
 "Assets/Script/test.cs"
+"Assets/Script/UIMove.cs"
 "Assets/Script/UI_StageProcess.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01_UGUI.cs"
