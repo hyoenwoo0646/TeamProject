@@ -15,11 +15,12 @@ public class Player : MonoBehaviour
     public bool RightMove = false;
     Vector3 moveVelocity = Vector3.zero;
  
-
     public bool isHit;
     public bool Usedgun;
     public GameObject bulletobj;
 
+    public Image atkDial;
+    private float maxLimit = 5.0f;
     private float limittime;
 
     public float maxShotDelay;
@@ -41,13 +42,12 @@ public class Player : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        limittime = 5f;
+        limittime = maxLimit;
     }
 
     void Start()
     {
         minusHp = 1 / maxHP;
-
         InvokeRepeating("fuelDown", 1, 1);
     }
 
@@ -55,7 +55,6 @@ public class Player : MonoBehaviour
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         float time = gameManager.gTime;
-
 
         if (time <= 10)
             speed = 15.0f;
@@ -74,13 +73,14 @@ public class Player : MonoBehaviour
         if (Usedgun == true)
         {
             limittime -= Time.deltaTime;
+            atkDial.fillAmount = limittime / maxLimit;
             Fire();
         }
 
         if (limittime < 0f)
         {
             Usedgun = false;
-            limittime = 5f;
+            limittime = maxLimit;
         }
 
         Reload();
@@ -101,7 +101,6 @@ public class Player : MonoBehaviour
                 anim.SetBool("Direction", false);
                 moveVelocity = new Vector3(-0.5f, 0, 0);
                 transform.position += moveVelocity * speed * Time.deltaTime;
-
             }
         }
         
@@ -112,11 +111,8 @@ public class Player : MonoBehaviour
                 anim.SetBool("Direction", true);
                 moveVelocity = new Vector3(+0.5f, 0, 0);
                 transform.position += moveVelocity * speed * Time.deltaTime;
-
             }
         }
-        
-
         //float h = Input.GetAxisRaw("Horizontal");
         //if ((isTouchRight && h == 1) || (isTouchLeft && h == -1))
         //    h = 0;
@@ -189,11 +185,9 @@ public class Player : MonoBehaviour
         else if (collision.gameObject.tag == "Item")
         {
             Usedgun = true;
-  
         }
         else if (collision.gameObject.tag == "fuel")
         {
-            
             hPBar.value += Healing;
         }
     }
@@ -220,24 +214,18 @@ public class Player : MonoBehaviour
         }
     }
 
-    
-
-
     void OnDamaged()
     {
         gameObject.layer = 7;
         hPBar.value -= minusHp * Time.deltaTime;
         spriteRenderer.color = new Color(1, 1, 1, 0.5f);
 
-
         Invoke("OnDamagedoff", 3);
     }
     void OnDamagedoff()
     {
-
         spriteRenderer.color = new Color(1, 1, 1, 1); //���� Ÿ�� ����(�������)
         gameObject.layer = 8;
-
     }
 
     void fuelDown()

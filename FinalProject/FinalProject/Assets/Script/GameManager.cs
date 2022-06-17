@@ -72,7 +72,6 @@ public class GameManager : MonoBehaviour
         score.text = $"{gTime:N1}";
     }
 
-
     public void scene_begin() //초기화면으로
     {
         stopGame();
@@ -81,13 +80,7 @@ public class GameManager : MonoBehaviour
     
     public void scene_restart() //Main 씬 재시작
     {
-        if (isPlaying == false)
-        {
-            isPlaying = true;
-        }
-
         SceneManager.LoadScene("Main");
-
     }
 
     public void scene_quit() //어플리케이션 종료. #if는 에디터상에서도 종료시키기 위함
