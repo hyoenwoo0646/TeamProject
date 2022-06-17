@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void stopGame() //외부에서 stopGame()dm로 호출하며, isPlaying의 값에 따라 게임 정지/재시작
+    public void stopGame() //외부에서 stopGame()으로 호출하며, isPlaying의 값에 따라 게임 일시정지/재개
     {
         if(isPlaying == true)
         {
@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void gameOver()
+    public void gameOver() //게임(한 판)이 온전히 종료
     {
         isPlaying = false;
         isOver = true;
@@ -72,18 +72,19 @@ public class GameManager : MonoBehaviour
         player.SetActive(true);
     }
 
-    public void scene_begin()
+    public void scene_begin() //초기화면으로
     {
-        
+        stopGame();
+        SceneManager.LoadScene("Begin");
     }
     
-    public void scene_restart()
+    public void scene_restart() //Main 씬 재시작
     {
         stopGame();
         SceneManager.LoadScene("Main");
     }
     
-    public void scene_quit()
+    public void scene_quit() //어플리케이션 종료. #if는 에디터상에서도 종료시키기 위함
     {
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
