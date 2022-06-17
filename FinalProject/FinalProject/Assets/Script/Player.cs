@@ -47,12 +47,15 @@ public class Player : MonoBehaviour
     void Start()
     {
         minusHp = 1 / maxHP;
+
+        InvokeRepeating("fuelDown", 1, 1);
     }
 
     void Update()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         float time = gameManager.gTime;
+
 
         if (time <= 10)
             speed = 15.0f;
@@ -91,22 +94,28 @@ public class Player : MonoBehaviour
 
     void Move()
     {
-    
-        if(LeftMove)
+        if(gameObject.transform.position.x >= -3.5f)
         {
-            anim.SetBool("Direction",false);
-            moveVelocity = new Vector3(-0.10f, 0, 0);
-            transform.position += moveVelocity * speed * Time.deltaTime;
-            
-        }
+            if (LeftMove)
+            {
+                anim.SetBool("Direction", false);
+                moveVelocity = new Vector3(-0.5f, 0, 0);
+                transform.position += moveVelocity * speed * Time.deltaTime;
 
-        if (RightMove)
+            }
+        }
+        
+        if(gameObject.transform.position.x <= 3.5f)
         {
-            anim.SetBool("Direction", true);
-            moveVelocity = new Vector3(+0.10f, 0, 0);
-            transform.position += moveVelocity * speed * Time.deltaTime;
+            if (RightMove)
+            {
+                anim.SetBool("Direction", true);
+                moveVelocity = new Vector3(+0.5f, 0, 0);
+                transform.position += moveVelocity * speed * Time.deltaTime;
 
+            }
         }
+        
 
         //float h = Input.GetAxisRaw("Horizontal");
         //if ((isTouchRight && h == 1) || (isTouchLeft && h == -1))
@@ -229,5 +238,10 @@ public class Player : MonoBehaviour
         spriteRenderer.color = new Color(1, 1, 1, 1); //���� Ÿ�� ����(�������)
         gameObject.layer = 8;
 
+    }
+
+    void fuelDown()
+    {
+        hPBar.value -= 1;
     }
 }
