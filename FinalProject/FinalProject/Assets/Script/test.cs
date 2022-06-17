@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class test : MonoBehaviour
 {
+    GameManager gameManager;
 
     public Slider hPBar;
     public float maxHP = 0.0f;
@@ -24,9 +25,15 @@ public class test : MonoBehaviour
 
     void Update()
     {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         //timeText.text = string.Format("{0:f2}", time += Time.deltaTime);
         // hpText.text = string.Format("HP : {0:f2}", (hPBar.value) * 100);
         hPBar.value -= minusHp * Time.deltaTime;
+        if(hPBar.value <= 0)
+        {
+            //gameManager.stopGame();
+            gameManager.gameOver();
+        }
     }
 
     private void OnTriggerEnter(Collider collision)
