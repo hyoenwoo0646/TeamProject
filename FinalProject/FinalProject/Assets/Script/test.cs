@@ -26,8 +26,6 @@ public class test : MonoBehaviour
     void Update()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        //timeText.text = string.Format("{0:f2}", time += Time.deltaTime);
-        // hpText.text = string.Format("HP : {0:f2}", (hPBar.value) * 100);
         hPBar.value -= minusHp * Time.deltaTime;
         if(hPBar.value <= 0)
         {
@@ -38,7 +36,7 @@ public class test : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "EnemyBullet") //���ʹ̴� ��, ���ʹ̺ҷ��� �Ѿ�
+        if (collision.gameObject.tag == "Enemy") //���ʹ̴� ��, ���ʹ̺ҷ��� �Ѿ�
         {
             hPBar.value -= Damage;
         }

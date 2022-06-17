@@ -67,18 +67,6 @@ public class GameManager : MonoBehaviour
         score.text = $"{gTime:N1}";
     }
 
-    public void RespawnPlayer()
-    {
-        Invoke("RespawnPlayerExe", 0.5f);
-    }
-
-    void RespawnPlayerExe()
-    {
-        player.transform.position = new Vector3(0.0f, -6.02f, -7.7f);
-        player.SetActive(true);
-        Player playerLogic = player.GetComponent<Player>();
-        playerLogic.isHit = false;
-    }
 
     public void scene_begin() //초기화면으로
     {
