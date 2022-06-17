@@ -18,7 +18,6 @@ public class GameManager : MonoBehaviour
     void Start() //게임 매니저가 시작할 때 "실행중"으로 변경
     {
         Time.timeScale = 1;
-
         isPlaying = true; 
         isOver = false;
     }

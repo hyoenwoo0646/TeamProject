@@ -5,16 +5,27 @@ using UnityEngine.SceneManagement;
 
 public class begin : MonoBehaviour
 {
+    public GameObject playInfo;
+    private bool infoWatch;
+
     void Start()
     {
-        
+        infoWatch = false;
     }
 
     void Update()
     {
         if(Input.anyKeyDown)
         {
-            SceneManager.LoadScene("Main");
+            if(!infoWatch)
+            {
+                playInfo.SetActive(true);
+                infoWatch = true;
+            }
+            else
+            {
+                SceneManager.LoadScene("Main");
+            }
         }
     }
 }
