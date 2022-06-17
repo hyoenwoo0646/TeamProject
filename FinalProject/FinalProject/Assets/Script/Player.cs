@@ -19,9 +19,7 @@ public class Player : MonoBehaviour
     public bool Usedgun;
     public GameObject bulletobj;
 
-    public Image atkDial;
-    private float maxLimit = 5.0f;
-    private float limittime;
+    
 
     public float maxShotDelay;
     public float curShotDelay;
@@ -42,7 +40,7 @@ public class Player : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        limittime = maxLimit;
+        
     }
 
     void Start()
@@ -69,21 +67,6 @@ public class Player : MonoBehaviour
             speed = 18.0f;
 
         Move();
-
-        if (Usedgun == true)
-        {
-            limittime -= Time.deltaTime;
-            atkDial.fillAmount = limittime / maxLimit;
-            Fire();
-        }
-
-        if (limittime < 0f)
-        {
-            Usedgun = false;
-            limittime = maxLimit;
-        }
-
-        Reload();
 
         if (hPBar.value <= 0)
         {
@@ -130,7 +113,7 @@ public class Player : MonoBehaviour
         //}
     }
 
-    void Fire()
+    public void Fire()
     {
         if (!Input.GetButton("Fire1"))
         {
@@ -147,7 +130,7 @@ public class Player : MonoBehaviour
         curShotDelay = 0;
     }
 
-    void Reload()
+    public void Reload()
     {
         curShotDelay += Time.deltaTime;
     }
