@@ -29,7 +29,7 @@ public class test : MonoBehaviour
         hPBar.value -= minusHp * Time.deltaTime;
         if(hPBar.value <= 0)
         {
-            //gameManager.stopGame();
+            gameManager.endGame();
             gameManager.gameOver();
         }
     }

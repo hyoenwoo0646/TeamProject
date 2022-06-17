@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
 
     void Start() //게임 매니저가 시작할 때 "실행중"으로 변경
     {
+        Time.timeScale = 1;
+
         isPlaying = true; 
         isOver = false;
     }
@@ -55,13 +57,16 @@ public class GameManager : MonoBehaviour
 
     public void endGame()//체력 0 됐을때 아예 끝나게 하는 함수
     {
-        Time.timeScale = 0;
-        //isPlaying = false;
+        if(isPlaying == true)
+        {
+            Time.timeScale = 0;
+            isPlaying = false;
+        }
+        return;
     }
 
     public void gameOver() //게임(한 판)이 온전히 종료
     {
-        isPlaying = false;
         isOver = true;
         gameOverWindow.SetActive(true);
         score.text = $"{gTime:N1}";
@@ -76,11 +81,15 @@ public class GameManager : MonoBehaviour
     
     public void scene_restart() //Main 씬 재시작
     {
-        stopGame();
+        if (isPlaying == false)
+        {
+            isPlaying = true;
+        }
+
         SceneManager.LoadScene("Main");
-        isPlaying = true;
+
     }
-    
+
     public void scene_quit() //어플리케이션 종료. #if는 에디터상에서도 종료시키기 위함
     {
 #if UNITY_EDITOR

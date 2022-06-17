@@ -78,10 +78,9 @@ public class Player : MonoBehaviour
 
         Reload();
 
-        hPBar.value -= minusHp * Time.deltaTime;
         if (hPBar.value <= 0)
         {
-            //gameManager.stopGame();
+            gameManager.endGame();
             gameManager.gameOver();
         }
     }
@@ -154,10 +153,7 @@ public class Player : MonoBehaviour
 
         else if (collision.gameObject.tag == "Enemy") //���ʹ̴� ��, ���ʹ̺ҷ��� �Ѿ�
         {
-     
             OnDamaged();
-            
-            
         }
 
         else if (collision.gameObject.tag == "Item")
@@ -195,7 +191,7 @@ public class Player : MonoBehaviour
     void OnDamaged()
     {
         gameObject.layer = 7;
-        hPBar.value -= Damage;
+        hPBar.value -= minusHp * Time.deltaTime;
         spriteRenderer.color = new Color(1, 1, 1, 0.5f);
 
 
