@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     public AudioClip soundEnemy;
     public AudioClip soundShot;
     public AudioClip soundITEM;
+    public bool isSoundEffectOn;
 
     public bool isHit;
     public bool Usedgun;
@@ -46,6 +47,7 @@ public class Player : MonoBehaviour
         anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         audioSource = GetComponent<AudioSource>();
+        isSoundEffectOn = true;
     }
 
     void Start()
@@ -226,18 +228,33 @@ public class Player : MonoBehaviour
 
     void PlaySound(string action)
     {
-        switch(action)
+        if(isSoundEffectOn == true)
         {
-            case "ENEMY":
-                audioSource.clip = soundEnemy;
-                break;
-            case "SHOT":
-                audioSource.clip = soundShot;
-                break;
-            case "ITEM":
-                audioSource.clip = soundITEM;
-                break;
+            switch(action)
+            {
+                case "ENEMY":
+                    audioSource.clip = soundEnemy;
+                    break;
+                case "SHOT":
+                    audioSource.clip = soundShot;
+                    break;
+                case "ITEM":
+                    audioSource.clip = soundITEM;
+                    break;
+            }
+            audioSource.Play();
         }
-        audioSource.Play();
+    }
+
+    public void stopSoundEffect()
+    {
+        if(isSoundEffectOn == true)
+        {
+            isSoundEffectOn = false;
+        }
+        else
+        {
+            isSoundEffectOn = true;
+        }
     }
 }
