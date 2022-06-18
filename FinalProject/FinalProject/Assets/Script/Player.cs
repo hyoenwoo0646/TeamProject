@@ -14,7 +14,12 @@ public class Player : MonoBehaviour
     public bool LeftMove = false;
     public bool RightMove = false;
     Vector3 moveVelocity = Vector3.zero;
- 
+
+    AudioSource audioSource;
+    public AudioClip soundEnemy;
+    public AudioClip soundShot;
+    public AudioClip soundITEM;
+
     public bool isHit;
     public bool Usedgun;
     public GameObject bulletobj;
@@ -40,7 +45,7 @@ public class Player : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Start()
@@ -126,7 +131,7 @@ public class Player : MonoBehaviour
         GameObject bullet = Instantiate(bulletobj, transform.position, transform.rotation);
         Rigidbody rigid = bullet.GetComponent<Rigidbody>();
         rigid.AddForce(Vector2.up * 10, ForceMode.Impulse);
-
+        PlaySound("SHOT");
         curShotDelay = 0;
     }
 
@@ -172,6 +177,7 @@ public class Player : MonoBehaviour
         else if (collision.gameObject.tag == "fuel")
         {
             hPBar.value += Healing;
+            PlaySound("ITEM");
         }
     }
 
@@ -200,6 +206,7 @@ public class Player : MonoBehaviour
     void OnDamaged()
     {
         gameObject.layer = 7;
+        PlaySound("ENEMY");
         hPBar.value -= minusHp * Time.deltaTime;
         spriteRenderer.color = new Color(1, 1, 1, 0.5f);
 
@@ -214,5 +221,23 @@ public class Player : MonoBehaviour
     void fuelDown()
     {
         hPBar.value -= 1;
+    }
+
+
+    void PlaySound(string action)
+    {
+        switch(action)
+        {
+            case "ENEMY":
+                audioSource.clip = soundEnemy;
+                break;
+            case "SHOT":
+                audioSource.clip = soundShot;
+                break;
+            case "ITEM":
+                audioSource.clip = soundITEM;
+                break;
+        }
+        audioSource.Play();
     }
 }
