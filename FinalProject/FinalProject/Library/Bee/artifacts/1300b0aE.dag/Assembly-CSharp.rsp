@@ -368,6 +368,7 @@
 "Assets/Script/test.cs"
 "Assets/Script/UIMove.cs"
 "Assets/Script/UI_StageProcess.cs"
+"Assets/Script/UI_TapManager.cs"
 "Assets/Script/UI_Toggle.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01_UGUI.cs"
