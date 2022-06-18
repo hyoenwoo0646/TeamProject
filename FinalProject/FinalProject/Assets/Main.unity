@@ -5002,7 +5002,7 @@ GameObject:
   - component: {fileID: 1713393645}
   - component: {fileID: 1713393644}
   m_Layer: 5
-  m_Name: Pannal_img
+  m_Name: Pannel_img
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5073,7 +5073,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1713847046}
   m_Layer: 5
-  m_Name: Upper_pannal
+  m_Name: Upper_pannel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6068,7 +6068,7 @@ GameObject:
   - component: {fileID: 1984551468}
   - component: {fileID: 1984551467}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Pannel_background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6091,8 +6091,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -91.724}
-  m_SizeDelta: {x: 1080, y: 253.3582}
+  m_AnchoredPosition: {x: 0, y: -100.35571}
+  m_SizeDelta: {x: 1100, y: 280.7115}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1984551467
 MonoBehaviour:
@@ -6114,7 +6114,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c9be2c506c5d33641a5864cee1779772, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e2a089a4e2bbdab4f933d3d502a6f4ca, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class fuelItemGenerator : MonoBehaviour
 {
-    // Start is called before the first frame update
     GameManager gameManager;
     public float time;
 
@@ -27,7 +26,6 @@ public class fuelItemGenerator : MonoBehaviour
         InvokeRepeating("BlockGen", 7, 20);
     }
 
-    // Update is called once per frame
     void Update()
     {
         randomX1 = Random.Range(-4.0f, 4.0f);
@@ -37,7 +35,6 @@ public class fuelItemGenerator : MonoBehaviour
 
     void BlockGen()
     {
-
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         time = gameManager.gTime;
 
@@ -45,18 +42,7 @@ public class fuelItemGenerator : MonoBehaviour
         spawnPos2 = new Vector3(randomX2, 7.7f, -8.0f);
         spawnPos3 = new Vector3(randomX3, 7.7f, -8.0f);
 
-        
         blockPrefab = Instantiate(Block, spawnPos1, Quaternion.identity);
             
-        
-
-    
-      
-      
-
-       
-       
-
     }
-
 }

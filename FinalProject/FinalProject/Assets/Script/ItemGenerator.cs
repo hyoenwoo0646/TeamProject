@@ -47,23 +47,16 @@ public class ItemGenerator : MonoBehaviour
         if (time <= 60)
         {
             blockPrefab = Instantiate(Block, spawnPos1, Quaternion.identity);
-
         }
 
         else if (time > 60 && time <= 120)
         {
             blockPrefab = Instantiate(Block, spawnPos1, Quaternion.identity);
-
-
         }
 
         else if (time > 120)
         {
             blockPrefab = Instantiate(Block, spawnPos1, Quaternion.identity);
-
         }
-
-
     }
-
 }
