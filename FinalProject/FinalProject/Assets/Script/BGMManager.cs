@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class BGMManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-
     GameObject BackGroundMusic;
     AudioSource bgm;
 
@@ -14,23 +12,23 @@ public class BGMManager : MonoBehaviour
         BackGroundMusic = GameObject.Find("BackGroundMusic");
         bgm = BackGroundMusic.GetComponent<AudioSource>();
 
-        if (bgm.isPlaying)
-            return;
-
+        if (bgm.isPlaying) return;
         else
         {
             bgm.Play();
             DontDestroyOnLoad(bgm);
         }
     }
-    void Start()
+    
+    public void BGMPlay()
     {
+        if(bgm.isPlaying) return;
         
+        bgm.Play();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void BGMStop()
     {
-        
+        bgm.Stop();
     }
 }
