@@ -15,6 +15,9 @@ public class UI_Toggle : MonoBehaviour
     public GameObject musicOnBtn;
     public GameObject musicOffBtn;
     public bool isMusicOn;
+
+    GameObject BackGroundMusic;
+    AudioSource bgm;
     
     void Awake()
     {
@@ -44,13 +47,15 @@ public class UI_Toggle : MonoBehaviour
     
     public void ButtonAction_Music()
     {
-        if(isMusicOn == true)
+        BackGroundMusic = GameObject.Find("BackGroundMusic");
+        bgm = BackGroundMusic.GetComponent<AudioSource>();
+        if(bgm.isPlaying == true)
         {
             musicOnImg.SetActive(false);
             musicOnBtn.SetActive(false);
             musicOffImg.SetActive(true);
             musicOffBtn.SetActive(true);
-            isMusicOn = false;
+            bgm.Pause();
         }
         else
         {
@@ -58,7 +63,7 @@ public class UI_Toggle : MonoBehaviour
             musicOnBtn.SetActive(true);
             musicOffImg.SetActive(false);
             musicOffBtn.SetActive(false);
-            isMusicOn = true;
+            bgm.Play();
         }
     }
 }
