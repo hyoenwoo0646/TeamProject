@@ -9,14 +9,14 @@ public class BGMManager : MonoBehaviour
 
     void Awake()
     {
-        BackGroundMusic = GameObject.Find("BackGroundMusic");
+        BackGroundMusic = GameObject.Find("BackGroundMusic");       //bgm 받아오기
         bgm = BackGroundMusic.GetComponent<AudioSource>();
 
         if (bgm.isPlaying) return;
         else
         {
             bgm.Play();
-            DontDestroyOnLoad(bgm);
+            DontDestroyOnLoad(bgm);     //씬이 변경되도 로드
         }
     }
     

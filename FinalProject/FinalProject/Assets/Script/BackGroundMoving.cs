@@ -20,10 +20,10 @@ public class BackGroundMoving : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>(); //시간 받아오기
         time = gameManager.gTime;
 
-        if (time <= 10)
+        if (time <= 10) //시간별로 배경 속도 변경
             speed = 0.4f;
 
         else if (time > 10 && time <= 30)
@@ -41,6 +41,6 @@ public class BackGroundMoving : MonoBehaviour
 
         offset += Time.deltaTime * speed;
        
-        render.material.mainTextureOffset = new Vector2(0, offset);
+        render.material.mainTextureOffset = new Vector2(0, offset); //속도만큼 오프셋 변경
     }
 }

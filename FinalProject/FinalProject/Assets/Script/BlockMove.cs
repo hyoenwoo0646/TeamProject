@@ -19,7 +19,7 @@ public class BlockMove : MonoBehaviour
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         float time = gameManager.gTime;
-
+        //시간별로 장애물 속도 증가
         if (time <= 10)
             speed = 4.0f;
 
@@ -46,7 +46,7 @@ public class BlockMove : MonoBehaviour
         //}
     }
 
-    private void OnTriggerEnter(Collider collision)
+    private void OnTriggerEnter(Collider collision)     //삭제 함수
     {
         if (collision.gameObject.tag == "BorderBullet")
         {

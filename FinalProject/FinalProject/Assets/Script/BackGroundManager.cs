@@ -20,11 +20,11 @@ public class BackGroundManager : MonoBehaviour
 
     void Update()
     {
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();//게임 매니저에서 시간 받아오기
         time = gameManager.gTime;
  
 
-        if (time > 30 && time < 60)
+        if (time > 30 && time < 60) //시간별로 배경 오브젝트 껐다켰다 해주는거
         {
             Quad1.SetActive(false);
             Quad2.SetActive(true);
