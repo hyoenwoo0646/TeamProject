@@ -24,7 +24,7 @@ public class begin : MonoBehaviour
             }
             else
             {
-                SceneManager.LoadScene("Main");
+                SceneManager.LoadScene("Load Scene");
             }
         }
     }

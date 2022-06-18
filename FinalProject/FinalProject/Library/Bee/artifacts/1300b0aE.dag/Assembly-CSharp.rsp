@@ -364,6 +364,7 @@
 "Assets/Script/GameManager.cs"
 "Assets/Script/ItemGenerator.cs"
 "Assets/Script/ItemMove.cs"
+"Assets/Script/LoadScene.cs"
 "Assets/Script/moveTouch.cs"
 "Assets/Script/Player.cs"
 "Assets/Script/test.cs"
